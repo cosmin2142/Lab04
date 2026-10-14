@@ -1,14 +1,30 @@
+lista_espossitori=[]
+lista_stand=[]
+
 class LingottoFiere:
     def __init__(self, nome):
         """Inizializza gli attributi e le strutture dati"""
-        # TODO
+        self.__nome = nome
+
+
 
     """Aggiungere setter e getter se necessari"""
-    # TODO
+
+    @property
+    def nome(self):
+        return self.__nome
+
+    @nome.setter
+    def nome(self, nome):
+        self.__nome = nome
+        print(nome)
 
     def carica_file_dati(self, file_path):
         """Carica i dati (stand ed espositori) dal file"""
-        # TODO
+        infile = open(file_path, "r")
+        for riga in infile:
+            campo=riga.strip().split(",")
+
 
     def assegna_stand_a_espositore(self, codice_stand, codice_espositore):
         """Associa uno stand a un espositore"""
